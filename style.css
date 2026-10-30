@@ -1,0 +1,12 @@
+* { margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', sans-serif; }
+body { background:#fff5f8; color:#4a2c2c; }
+header { background:#ff8fab; color:white; text-align:center; padding:30px 15px; }
+header h1 { font-size:2.2rem; }
+.produtos { display:flex; gap:20px; justify-content:center; flex-wrap:wrap; padding:30px; }
+.produto { background:white; border:2px solid #ffc2d1; border-radius:15px; width:260px; padding:20px; text-align:center; box-shadow:0 4px 10px rgba(0,0,0,0.08); }
+.produto h3 { color:#c9184a; margin-bottom:8px; }
+.preco { display:block; margin-top:12px; font-weight:bold; font-size:1.2rem; color:#ff4d6d; }
+.instrucoes { text-align:center; padding:25px; background:#ffe5ec; margin:20px auto; max-width:700px; border-radius:12px; }
+button { background:#c9184a; color:white; border:none; padding:14px 28px; font-size:1.1rem; border-radius:30px; cursor:pointer; margin-top:12px; }
+button:hover { background:#ff4d6d; }
+footer { text-align:center; padding:20px; background:#4a2c2c; color:white; margin-top:20px; }
