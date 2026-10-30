@@ -2,46 +2,50 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Doce Encanto da Mayane</title>
-<link rel="stylesheet" href="style.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,sans-serif}
+body{background:#fff5f8;color:#4a2c2c}
+header{background:#ff8fab;color:white;text-align:center;padding:30px 15px}
+.produtos{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;padding:30px}
+.produto{background:white;border:2px solid #ffc2d1;border-radius:15px;width:260px;padding:20px;text-align:center;box-shadow:0 4px 10px rgba(0,0,0,0.08)}
+.produto h3{color:#c9184a;margin-bottom:8px}
+.preco{display:block;margin-top:12px;font-weight:bold;font-size:1.2rem;color:#ff4d6d}
+.instrucoes{text-align:center;padding:25px;background:#ffe5ec;margin:20px auto;max-width:700px;border-radius:12px}
+button{background:#c9184a;color:white;border:none;padding:14px 28px;font-size:1.1rem;border-radius:30px;cursor:pointer;margin-top:12px}
+button:hover{background:#ff4d6d}
+footer{text-align:center;padding:20px;background:#4a2c2c;color:white;margin-top:20px}
+</style>
 </head>
 <body>
 <header>
 <h1>🍰 Doce Encanto da Mayane</h1>
 <p>Doces feitos com carinho para adoçar seu dia em Bacabal! Entregamos amor em forma de sobremesa.</p>
 </header>
-
 <main>
 <section class="instrucoes">
 <h2>Como comprar?</h2>
 <p>Clique no botão abaixo, informe a quantidade de cada doce que você quer e veja o total na hora!</p>
 <button onclick="simularCompra()">Simular compra</button>
 </section>
-
 <section class="produtos">
-<div class="produto">
-<h3>Brownie Recheado</h3>
-<p>Brownie de chocolate meio amargo com recheio de brigadeiro cremoso.</p>
-<span class="preco">R$ 8,50</span>
-</div>
-<div class="produto">
-<h3>Caixinha de Brigadeiros (6 unid.)</h3>
-<p>Brigadeiros gourmet: tradicional, ninho e paçoca.</p>
-<span class="preco">R$ 25,00</span>
-</div>
-<div class="produto">
-<h3>Torta no Pote</h3>
-<p>Camadas de bolo, creme e morango fresco no potinho de 250ml.</p>
-<span class="preco">R$ 12,00</span>
-</div>
+<div class="produto"><h3>Brownie Recheado</h3><p>Brownie de chocolate meio amargo com recheio de brigadeiro cremoso.</p><span class="preco">R$ 8,50</span></div>
+<div class="produto"><h3>Caixinha de Brigadeiros (6 unid.)</h3><p>Brigadeiros gourmet: tradicional, ninho e paçoca.</p><span class="preco">R$ 25,00</span></div>
+<div class="produto"><h3>Torta no Pote</h3><p>Camadas de bolo, creme e morango fresco no potinho de 250ml.</p><span class="preco">R$ 12,00</span></div>
 </section>
 </main>
-
-<footer>
-<p>Desenvolvido por Mayane Miranda Vieira - Trilha Programação + Robotic</p>
-</footer>
-
-<script src="script.js"></script>
+<footer><p>Desenvolvido por Mayane Miranda Vieira - Trilha Programação + Robotic</p></footer>
+<script>
+function simularCompra(){
+const pb=8.5, pbr=25, pt=12;
+let qb=Number(prompt("Quantos Brownies Recheados (R$ 8,50) você quer?"));
+let qbr=Number(prompt("Quantas Caixinhas de Brigadeiros (R$ 25,00) você quer?"));
+let qt=Number(prompt("Quantas Tortas no Pote (R$ 12,00) você quer?"));
+if(isNaN(qb)) qb=0; if(isNaN(qbr)) qbr=0; if(isNaN(qt)) qt=0;
+if(qb===0 && qbr===0 && qt===0){alert("Nenhum produto foi selecionado. Volte quando sentir vontade de um docinho!");return;}
+let tb=pb*qb, tbr=pbr*qbr, tt=pt*qt, total=tb+tbr+tt;
+alert(`🍰 RESUMO - Doce Encanto da Mayane 🍰\n\nBrownie: ${qb} x R$ 8,50 = R$ ${tb.toFixed(2)}\nBrigadeiros: ${qbr} x R$ 25,00 = R$ ${tbr.toFixed(2)}\nTorta: ${qt} x R$ 12,00 = R$ ${tt.toFixed(2)}\n\nTOTAL: R$ ${total.toFixed(2)}`);
+}
+</script>
 </body>
 </html>
